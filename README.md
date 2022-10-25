@@ -4,4 +4,4 @@ Gewohnheits tracker:
 - Aufbau wie eine to-do liste
 - nach X mal getrackt kann man seine Gewohnheit upgraden
 - man kann Punkte sammeln
--(optional) vergleich mit freunden durch Login
+- optional : vergleich mit freunden durch Login 
