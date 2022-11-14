@@ -4,10 +4,12 @@ public class Habit {
 
     private Long id;
     private String name;
+    private Boolean done;
 
-    public Habit(Long id, String name) {
+    public Habit(Long id, String name, Boolean done) {
         this.id = id;
         this.name = name;
+        this.done = done;
     }
 
     public Long getId() {
@@ -24,6 +26,14 @@ public class Habit {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Boolean isDone() {
+        return done;
+    }
+
+    public void setDone(Boolean done) {
+        this.done = done;
     }
 }
 
