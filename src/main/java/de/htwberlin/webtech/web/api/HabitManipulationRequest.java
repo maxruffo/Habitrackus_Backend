@@ -1,10 +1,10 @@
 package de.htwberlin.webtech.web.api;
 
-public class HabitCreateRequest {
+public class HabitManipulationRequest {
     private String name;
     private Boolean done;
 
-    public HabitCreateRequest( String name, Boolean done) {
+    public HabitManipulationRequest( String name, Boolean done) {
         this.name = name;
         this.done = done;
     }
