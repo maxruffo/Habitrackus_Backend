@@ -30,11 +30,11 @@ public class HabitRestController {
     }
 
 
-    @GetMapping(name = "api/v1/habits/{id}")
-    public ResponseEntity<Habit> fetchHabitById(@PathVariable(name = "id") Long id) {
+    @GetMapping(path = "api/v1/habits/{id}")
+    public ResponseEntity<Habit> fetchHabitById(@PathVariable Long id) {
         var habit = habitService.findById(id);
-        return habit != null ? ResponseEntity.ok(habit) : ResponseEntity.notFound().build();
-        //... noch nicht funktionsfähig
+        return habit != null? ResponseEntity.ok(habit) : ResponseEntity.notFound().build();
+
     }
 
     @PostMapping(path = "api/v1/habits")
