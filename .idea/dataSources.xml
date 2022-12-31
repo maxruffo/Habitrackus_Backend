@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="dcdbetrb4r7324@ec2-34-252-216-149.eu-west-1.compute.amazonaws.com" uuid="10f9be10-566e-4a6c-86cb-556837626dd8">
-      <driver-ref>postgresql</driver-ref>
+    <data-source source="LOCAL" name="databse" uuid="df04537f-12b9-4686-8f2e-63ef1a9a7c17">
+      <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>$JDBC_DATABASE_URL$</jdbc-url>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:$PROJECT_DIR$/databse</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
