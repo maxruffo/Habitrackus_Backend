@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:/home/max/WebTechProjekt_Max/database
+    url: ${JDBC_DATABASE_URL}
     username: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
     driverClassName: org.h2.Driver
