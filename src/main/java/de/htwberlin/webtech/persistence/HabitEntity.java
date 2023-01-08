@@ -16,6 +16,7 @@ public class HabitEntity {
     @Column(name = "done")
     private Boolean done;
 
+
     public HabitEntity(String name, Boolean done) {
         this.name = name;
         this.done = done;

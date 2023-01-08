@@ -8,6 +8,7 @@ import de.htwberlin.webtech.web.api.HabitManipulationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -39,9 +40,15 @@ public class HabitRestController {
 
     @PostMapping(path = "api/v1/habits")
     public ResponseEntity<Void> createHabit(@RequestBody HabitManipulationRequest request) throws URISyntaxException {
-        var habit = habitService.create(request);
-        URI uri = new URI("api/v1/habits/" + habit.getId());
-        return ResponseEntity.created(uri).build();
+        var valid = validate(request);
+        if(valid){
+            var habit = habitService.create(request);
+            URI uri = new URI("api/v1/habits/" + habit.getId());
+            return ResponseEntity.created(uri).build();
+        }
+        else{
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping(path = "api/v1/habits/{id}")
@@ -51,7 +58,12 @@ public class HabitRestController {
     }
     @DeleteMapping(path = "api/v1/habits/{id}")
     public ResponseEntity<Void> deleteHabit(@PathVariable Long id){
-        boolean sucessfull = habitService.deleteById(id);
-        return sucessfull? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+        boolean successful = habitService.deleteById(id);
+        return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+    }
+
+    private boolean validate(HabitManipulationRequest request){
+        return request.getName() != null
+                && !request.getName().isBlank();
     }
 }
