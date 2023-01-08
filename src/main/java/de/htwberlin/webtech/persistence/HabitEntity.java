@@ -17,6 +17,7 @@ public class HabitEntity {
     private Boolean done;
 
 
+
     public HabitEntity(String name, Boolean done) {
         this.name = name;
         this.done = done;
@@ -44,4 +45,5 @@ public class HabitEntity {
     public void setDone(Boolean done) {
         this.done = done;
     }
+
 }

@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public class HabitService {
 
     private final HabitRepository habitRepository;
+
     public HabitService(HabitRepository habitRepository){
         this.habitRepository = habitRepository;
     }

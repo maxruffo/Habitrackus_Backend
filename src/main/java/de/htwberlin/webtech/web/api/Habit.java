@@ -2,11 +2,11 @@ package de.htwberlin.webtech.web.api;
 
 public class Habit {
 
-    private Long id;
+    private long id;
     private String name;
     private Boolean done;
 
-    public Habit(Long id, String name, Boolean done) {
+    public Habit(long id, String name, Boolean done) {
         this.id = id;
         this.name = name;
         this.done = done;
@@ -15,11 +15,11 @@ public class Habit {
 
 
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -38,6 +38,7 @@ public class Habit {
     public void setDone(Boolean done) {
         this.done = done;
     }
+
 }
 
 

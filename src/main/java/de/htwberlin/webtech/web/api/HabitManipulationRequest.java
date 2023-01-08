@@ -8,9 +8,8 @@ public class HabitManipulationRequest {
 
     private String name;
 
-    private String personid;
-
     private Boolean done;
+
 
     public HabitManipulationRequest( String name, Boolean done) {
         this.name = name;
@@ -34,6 +33,7 @@ public class HabitManipulationRequest {
     public void setDone(Boolean done) {
         this.done = done;
     }
+
 }
 
 

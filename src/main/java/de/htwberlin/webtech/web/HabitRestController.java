@@ -32,7 +32,7 @@ public class HabitRestController {
 
 
     @GetMapping(path = "api/v1/habits/{id}")
-    public ResponseEntity<Habit> fetchHabitById(@PathVariable Long id) {
+    public ResponseEntity<Habit> fetchHabitById(@PathVariable long id) {
         var habit = habitService.findById(id);
         return habit != null? ResponseEntity.ok(habit) : ResponseEntity.notFound().build();
 
@@ -52,12 +52,12 @@ public class HabitRestController {
     }
 
     @PutMapping(path = "api/v1/habits/{id}")
-    public ResponseEntity<Habit> updateHabit(@PathVariable Long id, @RequestBody HabitManipulationRequest request) throws URISyntaxException {
+    public ResponseEntity<Habit> updateHabit(@PathVariable long id, @RequestBody HabitManipulationRequest request) throws URISyntaxException {
         var habit = habitService.update(id, request);
         return habit != null ? ResponseEntity.ok(habit) : ResponseEntity.notFound().build();
     }
     @DeleteMapping(path = "api/v1/habits/{id}")
-    public ResponseEntity<Void> deleteHabit(@PathVariable Long id){
+    public ResponseEntity<Void> deleteHabit(@PathVariable long id){
         boolean successful = habitService.deleteById(id);
         return successful? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
     }
@@ -65,5 +65,7 @@ public class HabitRestController {
     private boolean validate(HabitManipulationRequest request){
         return request.getName() != null
                 && !request.getName().isBlank();
+
+
     }
 }
